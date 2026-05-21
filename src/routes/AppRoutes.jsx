@@ -5,6 +5,7 @@ import { ProtectedRoute } from "@/routes/ProtectedRoute";
 import { RoleRoute } from "@/routes/RoleRoute";
 import { ROLES } from "@/config/constants";
 import { HomePage } from "@/pages/HomePage";
+import { IssueDetailsPage } from "@/pages/IssueDetailsPage";
 import { AllIssuesPage } from "@/pages/AllIssuesPage";
 import { LoginPage } from "@/pages/LoginPage";
 import { RegisterPage } from "@/pages/RegisterPage";
@@ -18,6 +19,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: "all-issues", element: <AllIssuesPage /> },
+      { path: "issue-details/:id", element: <IssueDetailsPage /> },
       {
         element: <GuestRoute />,
         children: [
