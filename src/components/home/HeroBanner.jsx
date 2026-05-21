@@ -8,21 +8,21 @@ const SLIDES = [
       "Citizens document potholes, broken lights, and sanitation hazards with photos and precise locations.",
     cta: "Report an issue",
     href: "/register",
-    accent: "from-emerald-600 via-emerald-700 to-teal-800",
+     accent: "from-emerald-600 via-emerald-700 to-teal-800",
   },
   {
     title: "Staff teams track assignments in one place",
     subtitle:
       "Municipal workers receive prioritized tasks, update status, and close the loop with residents.",
     cta: "Browse resolved work",
-    href: "/all-issues",
+     href: "/all-issues",
     accent: "from-teal-700 via-cyan-800 to-slate-900",
   },
   {
     title: "Transparent progress for every neighborhood",
     subtitle:
       "Resolved issues stay visible so communities can see real maintenance outcomes across the city.",
-    cta: "See latest fixes",
+     cta: "See latest fixes",
     href: "#resolved-issues",
     accent: "from-slate-800 via-emerald-800 to-emerald-900",
   },
