@@ -7,5 +7,6 @@ export const API_ENDPOINTS = {
     public: "/issues/public",
     list: "/issues",
     byId: (id) => `/issues/${id}`,
+    upvote: (id) => `/issues/${id}/upvote`,
   },
 };
