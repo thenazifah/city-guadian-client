@@ -9,7 +9,17 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.3.0",
+    "tailwindcss": "^4.3.0",
     "typescript": "~6.0.2",
     "vite": "^8.0.12"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.100.11",
+    "axios": "^1.16.1",
+    "firebase": "^12.13.0",
+    "react-hot-toast": "^2.6.0",
+    "react-router-dom": "^7.15.1",
+    "sweetalert2": "^11.26.24"
   }
 }
