@@ -38,7 +38,7 @@ export function AllIssuesPage() {
   function handleUpvote(issue) {
     if (!isAuthenticated) {
       notifyError("Please sign in to upvote issues.");
-      navigate("/login", { state: { from: { pathname: "/all-issues" } } } });
+      navigate("/login", { state: { from: { pathname: "/all-issues" } } });
       return;
     }
 
