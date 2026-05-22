@@ -11,6 +11,6 @@ export const API_ENDPOINTS = {
     publicById: (id) => `/issues/public/${id}`,
     list: "/issues",
     byId: (id) => `/issues/${id}`,
-    upvote:  (id) => `/issues/${id}/upvote`,
+    upvote: (id) => `/issues/${id}/upvote`,
   },
 };
