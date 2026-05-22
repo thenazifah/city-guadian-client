@@ -16,7 +16,7 @@ export function IssueCard({ issue }) {
       <div className="relative aspect-[16/10] bg-slate-100">
         {imageUrl ? (
           <img
-            src={imageUrl}
+            src={ imageUrl}
             alt={issue.title}
             className="h-full w-full object-cover"
             loading="lazy"
