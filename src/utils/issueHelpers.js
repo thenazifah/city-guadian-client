@@ -8,10 +8,16 @@ const STATUS_STYLES = {
 };
 
 const STATUS_LABELS = {
-  [ISSUE_STATUS.OPEN]: "Open",
+  [ISSUE_STATUS.OPEN]: "Pending",
   [ISSUE_STATUS.IN_PROGRESS]: "In progress",
   [ISSUE_STATUS.RESOLVED]: "Resolved",
   [ISSUE_STATUS.REJECTED]: "Rejected",
+};
+
+const ROLE_LABELS = {
+  citizen: "Citizen",
+  staff: "Staff",
+  admin: "Admin",
 };
 
 const CATEGORY_LABELS = {
@@ -29,6 +35,14 @@ export function getStatusBadgeClass(status) {
 
 export function getStatusLabel(status) {
   return STATUS_LABELS[status] || status;
+}
+
+export function getRoleLabel(role) {
+  return ROLE_LABELS[role] || role;
+}
+
+export function isPendingStatus(status) {
+  return status === ISSUE_STATUS.OPEN;
 }
 
 export function getCategoryLabel(category) {
