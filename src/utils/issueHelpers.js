@@ -1,16 +1,20 @@
-import { ISSUE_STATUS } from "@/config/constants";
+import { ISSUE_STATUS, STAFF_STATUS_FLOW } from "@/config/constants";
 
 const STATUS_STYLES = {
   [ISSUE_STATUS.OPEN]: "bg-amber-100 text-amber-800",
   [ISSUE_STATUS.IN_PROGRESS]: "bg-blue-100 text-blue-800",
+  [ISSUE_STATUS.WORKING]: "bg-indigo-100 text-indigo-800",
   [ISSUE_STATUS.RESOLVED]: "bg-emerald-100 text-emerald-800",
+  [ISSUE_STATUS.CLOSED]: "bg-slate-200 text-slate-800",
   [ISSUE_STATUS.REJECTED]: "bg-red-100 text-red-800",
 };
 
 const STATUS_LABELS = {
   [ISSUE_STATUS.OPEN]: "Pending",
   [ISSUE_STATUS.IN_PROGRESS]: "In progress",
+  [ISSUE_STATUS.WORKING]: "Working",
   [ISSUE_STATUS.RESOLVED]: "Resolved",
+  [ISSUE_STATUS.CLOSED]: "Closed",
   [ISSUE_STATUS.REJECTED]: "Rejected",
 };
 
@@ -82,6 +86,14 @@ export function getIssueLocationText(issue) {
     return `Near ${coords[1].toFixed(4)}, ${coords[0].toFixed(4)}`;
   }
   return "Location on file";
+}
+
+export function getNextStaffStatus(currentStatus) {
+  const index = STAFF_STATUS_FLOW.indexOf(currentStatus);
+  if (index < 0 || index >= STAFF_STATUS_FLOW.length - 1) {
+    return null;
+  }
+  return STAFF_STATUS_FLOW[index + 1];
 }
 
 export function sortIssuesForFeed(issues) {

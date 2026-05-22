@@ -3,6 +3,9 @@ export const API_ENDPOINTS = {
     firebase: "/auth/firebase",
     me: "/auth/me",
   },
+  users: {
+    byId: (id) => `/users/${id}`,
+  },
   issues: {
     public: "/issues/public",
     publicById: (id) => `/issues/public/${id}`,
