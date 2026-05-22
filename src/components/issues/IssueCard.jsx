@@ -9,7 +9,7 @@ import {
 } from "@/utils/issueHelpers";
 
 export function IssueCard({ issue }) {
-  const imageUrl = getIssueImage(issue);
+  const imageUrl =   getIssueImage(issue);
 
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md">
