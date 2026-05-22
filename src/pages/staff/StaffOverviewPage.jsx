@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { StatCard } from "@/components/dashboard/StatCard";
 import { queryKeys } from "@/config/queryKeys";
 import { issuesService } from "@/services/issues.service";
-import { sortIssuesForFeed } from "@/utils/issueHelpers";
 import { computeStaffStats } from "@/utils/dashboardStats";
 import { ISSUE_STATUS } from "@/config/constants";
 import {
@@ -12,6 +11,7 @@ import {
   getPriorityLabel,
   getStatusBadgeClass,
   getStatusLabel,
+  sortIssuesForFeed,
 } from "@/utils/issueHelpers";
 
 export function StaffOverviewPage() {

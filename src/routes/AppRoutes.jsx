@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { GuestRoute } from "@/routes/GuestRoute";
 import { ProtectedRoute } from "@/routes/ProtectedRoute";
@@ -11,6 +11,15 @@ import { LoginPage } from "@/pages/LoginPage";
 import { RegisterPage } from "@/pages/RegisterPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { DashboardPlaceholder } from "@/pages/dashboard/DashboardPlaceholder";
+import { CitizenDashboardLayout } from "@/pages/dashboard/CitizenDashboardLayout";
+import { StaffDashboardLayout } from "@/pages/dashboard/StaffDashboardLayout";
+import { CitizenOverviewPage } from "@/pages/citizen/CitizenOverviewPage";
+import { CitizenMyIssuesPage } from "@/pages/citizen/CitizenMyIssuesPage";
+import { CitizenReportIssuePage } from "@/pages/citizen/CitizenReportIssuePage";
+import { CitizenProfilePage } from "@/pages/citizen/CitizenProfilePage";
+import { StaffOverviewPage } from "@/pages/staff/StaffOverviewPage";
+import { StaffAssignedIssuesPage } from "@/pages/staff/StaffAssignedIssuesPage";
+import { StaffProfilePage } from "@/pages/staff/StaffProfilePage";
 
 export const router = createBrowserRouter([
   {
@@ -35,8 +44,13 @@ export const router = createBrowserRouter([
             element: <RoleRoute allowedRoles={[ROLES.CITIZEN]} />,
             children: [
               {
-                index: true,
-                element: <DashboardPlaceholder title="Citizen Dashboard" />,
+                element: <CitizenDashboardLayout />,
+                children: [
+                  { index: true, element: <CitizenOverviewPage /> },
+                  { path: "issues", element: <CitizenMyIssuesPage /> },
+                  { path: "report", element: <CitizenReportIssuePage /> },
+                  { path: "profile", element: <CitizenProfilePage /> },
+                ],
               },
             ],
           },
@@ -45,8 +59,12 @@ export const router = createBrowserRouter([
             element: <RoleRoute allowedRoles={[ROLES.STAFF]} />,
             children: [
               {
-                index: true,
-                element: <DashboardPlaceholder title="Staff Dashboard" />,
+                element: <StaffDashboardLayout />,
+                children: [
+                  { index: true, element: <StaffOverviewPage /> },
+                  { path: "issues", element: <StaffAssignedIssuesPage /> },
+                  { path: "profile", element: <StaffProfilePage /> },
+                ],
               },
             ],
           },
