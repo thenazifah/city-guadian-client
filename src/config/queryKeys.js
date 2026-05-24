@@ -5,8 +5,10 @@ export const queryKeys = {
     detail: (id) => ["issues", "detail", id],
     myList: () => ["issues", "my"],
     staffAssigned: () => ["issues", "staff", "assigned"],
+    adminAll: () => ["issues", "admin", "all"],
   },
   users: {
     profile: (id) => ["users", id],
+    all: () => ["users", "all"],
   },
 };

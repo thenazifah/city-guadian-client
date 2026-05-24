@@ -33,6 +33,16 @@ export const issuesService = {
     return data.data;
   },
 
+  async listAll() {
+    const { data } = await apiClient.get(API_ENDPOINTS.issues.list);
+    return data.data;
+  },
+
+  async updateByAdmin(id, payload) {
+    const { data } = await apiClient.patch(API_ENDPOINTS.issues.byId(id), payload);
+    return data.data;
+  },
+
   async getDetails(id) {
     const { data } = await apiClient.get(API_ENDPOINTS.issues.byId(id));
     return data.data;

@@ -10,3 +10,10 @@ export const STAFF_NAV = [
   { to: "/staff/issues", label: "Assigned issues" },
   { to: "/staff/profile", label: "Profile" },
 ];
+
+export const ADMIN_NAV = [
+  { to: "/admin", label: "Overview", end: true },
+  { to: "/admin/issues", label: "All issues" },
+  { to: "/admin/users", label: "Manage users" },
+  { to: "/admin/staff", label: "Manage staff" },
+];

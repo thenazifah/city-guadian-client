@@ -4,7 +4,11 @@ export const API_ENDPOINTS = {
     me: "/auth/me",
   },
   users: {
+    list: "/users",
+    staff: "/users/staff",
     byId: (id) => `/users/${id}`,
+    status: (id) => `/users/${id}/status`,
+    admin: (id) => `/users/${id}/admin`,
   },
   issues: {
     public: "/issues/public",

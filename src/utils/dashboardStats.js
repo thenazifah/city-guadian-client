@@ -29,6 +29,31 @@ export function computeStaffStats(issues) {
   };
 }
 
+export function computeAdminStats(issues, users) {
+  const issueList = issues ?? [];
+  const userList = users ?? [];
+
+  return {
+    totalIssues: issueList.length,
+    pending: issueList.filter((i) => i.status === ISSUE_STATUS.OPEN).length,
+    resolved: issueList.filter((i) =>
+      [ISSUE_STATUS.RESOLVED, ISSUE_STATUS.CLOSED].includes(i.status)
+    ).length,
+    rejected: issueList.filter((i) => i.status === ISSUE_STATUS.REJECTED).length,
+    payments: 0,
+    citizens: userList.filter((u) => u.role === "citizen").length,
+    staff: userList.filter((u) => u.role === "staff").length,
+  };
+}
+
+export function buildAdminIssueChartData(stats) {
+  return [
+    { label: "Pending", value: stats.pending, color: "bg-amber-500" },
+    { label: "Resolved", value: stats.resolved, color: "bg-emerald-500" },
+    { label: "Rejected", value: stats.rejected, color: "bg-red-500" },
+  ].filter((item) => item.value > 0);
+}
+
 export function buildStatusChartData(stats) {
   return [
     { label: "Pending", value: stats.pending, color: "bg-amber-500" },

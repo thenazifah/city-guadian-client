@@ -10,9 +10,9 @@ import { AllIssuesPage } from "@/pages/AllIssuesPage";
 import { LoginPage } from "@/pages/LoginPage";
 import { RegisterPage } from "@/pages/RegisterPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
-import { DashboardPlaceholder } from "@/pages/dashboard/DashboardPlaceholder";
 import { CitizenDashboardLayout } from "@/pages/dashboard/CitizenDashboardLayout";
 import { StaffDashboardLayout } from "@/pages/dashboard/StaffDashboardLayout";
+import { AdminDashboardLayout } from "@/pages/dashboard/AdminDashboardLayout";
 import { CitizenOverviewPage } from "@/pages/citizen/CitizenOverviewPage";
 import { CitizenMyIssuesPage } from "@/pages/citizen/CitizenMyIssuesPage";
 import { CitizenReportIssuePage } from "@/pages/citizen/CitizenReportIssuePage";
@@ -20,6 +20,10 @@ import { CitizenProfilePage } from "@/pages/citizen/CitizenProfilePage";
 import { StaffOverviewPage } from "@/pages/staff/StaffOverviewPage";
 import { StaffAssignedIssuesPage } from "@/pages/staff/StaffAssignedIssuesPage";
 import { StaffProfilePage } from "@/pages/staff/StaffProfilePage";
+import { AdminOverviewPage } from "@/pages/admin/AdminOverviewPage";
+import { AdminIssuesPage } from "@/pages/admin/AdminIssuesPage";
+import { AdminUsersPage } from "@/pages/admin/AdminUsersPage";
+import { AdminStaffPage } from "@/pages/admin/AdminStaffPage";
 
 export const router = createBrowserRouter([
   {
@@ -73,8 +77,13 @@ export const router = createBrowserRouter([
             element: <RoleRoute allowedRoles={[ROLES.ADMIN]} />,
             children: [
               {
-                index: true,
-                element: <DashboardPlaceholder title="Admin Dashboard" />,
+                element: <AdminDashboardLayout />,
+                children: [
+                  { index: true, element: <AdminOverviewPage /> },
+                  { path: "issues", element: <AdminIssuesPage /> },
+                  { path: "users", element: <AdminUsersPage /> },
+                  { path: "staff", element: <AdminStaffPage /> },
+                ],
               },
             ],
           },
