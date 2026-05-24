@@ -48,12 +48,7 @@ export function CitizenOverviewPage() {
               accent="blue"
             />
             <StatCard label="Resolved" value={stats.resolved} />
-            <StatCard
-              label="Payments"
-              value={stats.payments}
-              hint="Not enabled"
-              accent="slate"
-            />
+            
           </div>
 
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
