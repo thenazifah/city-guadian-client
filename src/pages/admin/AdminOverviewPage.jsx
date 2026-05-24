@@ -56,12 +56,7 @@ export function AdminOverviewPage() {
             <StatCard label="Pending" value={stats.pending} accent="amber" />
             <StatCard label="Resolved" value={stats.resolved} />
             <StatCard label="Rejected" value={stats.rejected} accent="slate" />
-            <StatCard
-              label="Payments"
-              value={stats.payments}
-              hint="Not enabled"
-              accent="slate"
-            />
+            
           </div>
 
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
