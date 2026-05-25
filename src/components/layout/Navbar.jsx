@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { ROLE_HOME_ROUTES } from "@/config/constants";
 import { useAuth } from "@/hooks/useAuth";
+import logo from '../../../public/icons8-guardian-50.png';
 import { notifySuccess } from "@/utils/toast";
 
 const navLinkClass = ({ isActive }) =>
@@ -37,9 +38,8 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link to="/" className="flex shrink-0 items-center gap-2">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-600 text-sm font-bold text-white">
-            CG
-          </span>
+        <img src={logo} alt='logo' referrerPolicy="no-referrer" className="h-[40px] w-[40px]" />
+         
           <span className="text-base font-bold text-slate-900 sm:text-lg">
             City Guardian
           </span>
